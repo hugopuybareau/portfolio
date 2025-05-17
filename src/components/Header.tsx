@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, FileText } from 'lucide-react';
-import { Link } from './Navigation';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                     : 'bg-transparent py-5'
                 }`}
         >
-            <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div className="max-w-2xl mx-auto px-4 flex justify-between items-center">
                 <Link to="/" className="text-xl md:text-2xl font-bold tracking-tight">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
                         Hugo Puybareau
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="md:hidden absolute top-full left-0 right-0 bg-dark-900 border-t border-gray-800 shadow-lg">
-                    <div className="container mx-auto px-4 py-6 flex flex-col space-y-5 font-mono">
+                    <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col space-y-5 font-mono">
                         {[
                             { label: 'home', to: '/' },
                             { label: 'projects', to: '/projects' },
