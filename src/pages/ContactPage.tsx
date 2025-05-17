@@ -1,164 +1,126 @@
-import React from 'react';
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Mail, MapPin, Phone, Github, Linkedin, Code } from "lucide-react";
+
+import AnimatedLogo from "../components/Signature";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const ContactPage: React.FC = () => {
-    return (
-        <div className="pt-24 pb-16 px-4 md:px-6 min-h-screen">
-            <div className="container mx-auto max-w-4xl">
-                <div className="mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Get in Touch</h1>
-                    <p className="text-lg text-gray-600 max-w-2xl">
-                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
-                    </p>
-                </div>
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="min-h-screen flex flex-col px-4 pt-24 pb-10 max-w-2xl mx-auto text-gray-100 font-mono"
+    >
+      <div className="flex flex-col flex-grow">
+        <h1 className="text-3xl font-bold mb-6">Get in Touch</h1>
+        <p className="text-base text-gray-400 mb-10">
+          I'm always open to discussing new projects & creative ideas!
+        </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-                    {/* Contact Form */}
-                    <div className="md:col-span-3">
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
-                                        placeholder="Your name"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
-                                        placeholder="Your email"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                                    Subject
-                                </label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
-                                    placeholder="Subject"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows={5}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent"
-                                    placeholder="Your message"
-                                    required
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="px-6 py-3 bg-black text-white hover:bg-gray-800 transition-colors rounded-md"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-
-                    {/* Contact Information */}
-                    <div className="md:col-span-2">
-                        <div className="bg-gray-50 p-6 rounded-lg h-full">
-                            <h2 className="text-xl font-bold mb-6">Contact Information</h2>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start">
-                                    <div className="text-gray-800 mr-4">
-                                        <MapPin size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium">Location</h3>
-                                        <p className="text-gray-600">New York, NY, United States</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start">
-                                    <div className="text-gray-800 mr-4">
-                                        <Mail size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium">Email</h3>
-                                        <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-black transition-colors">
-                                            your.email@example.com
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start">
-                                    <div className="text-gray-800 mr-4">
-                                        <Phone size={20} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium">Phone</h3>
-                                        <a href="tel:+1234567890" className="text-gray-600 hover:text-black transition-colors">
-                                            +1 (234) 567-890
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="mt-10">
-                                <h3 className="font-medium mb-4">Connect With Me</h3>
-                                <div className="flex space-x-4">
-                                    <a
-                                        href="https://github.com"
-                                        className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-800 hover:bg-gray-200 transition-colors"
-                                        aria-label="GitHub"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Github size={20} />
-                                    </a>
-                                    <a
-                                        href="https://linkedin.com"
-                                        className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-800 hover:bg-gray-200 transition-colors"
-                                        aria-label="LinkedIn"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Linkedin size={20} />
-                                    </a>
-                                    <a
-                                        href="mailto:your.email@example.com"
-                                        className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-800 hover:bg-gray-200 transition-colors"
-                                        aria-label="Email"
-                                    >
-                                        <Mail size={20} />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="flex justify-center items-center gap-6 mb-10">
+          <AnimatedLogo />
+          <img
+            src="/photos/7.png"
+            alt="Hugo Puybareau"
+            className="w-[250px] h-[250px] rounded-full object-cover shadow-lg border-4 border-transparent bg-gradient-to-r from-ocean-400 to-ocean-600 p-1"
+          />
         </div>
-    );
+
+        <ul className="space-y-6 text-base leading-relaxed">
+          <li className="flex items-start gap-3">
+            <MapPin size={18} className="text-ocean-400 mt-1" />
+            <span className="text-gray-300">
+              Paris/Bordeaux, France – open to remote or hybrid opportunities
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <Mail size={18} className="text-ocean-400 mt-1" />
+            <a
+              href="mailto:hugo.puybareau@etu.ec-lyon.fr"
+              className="text-gray-300 hover:text-ocean-400 transition-colors"
+            >
+              hugo.puybareau@etu.ec-lyon.fr
+            </a>
+          </li>
+          <li className="flex items-start gap-3">
+            <Phone size={18} className="text-ocean-400 mt-1" />
+            <a
+              href="tel:+33612345678"
+              className="text-gray-300 hover:text-ocean-400 transition-colors"
+            >
+              +33 6 19 75 37 04
+            </a>
+          </li>
+        </ul>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 mt-10"
+          variants={fadeIn}
+          custom={20}
+        >
+          <a
+            href="/resume_PUYBAREAU.pdf"
+            className="relative inline-flex items-center gap-2 text-ocean-400 hover:text-ocean-200 transition-colors before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 before:rounded-full"
+          >
+            → view my resume
+          </a>
+        </motion.div>
+      </div>
+
+      <motion.footer
+        className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
+        variants={fadeIn}
+      >
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
+          © 2025 Hugo Puybareau
+        </div>
+
+        <div className="mt-2 sm:mt-0 flex gap-4">
+          {[
+            {
+              icon: <Github size={20} />,
+              href: "https://github.com/hugopuybareau",
+            },
+            {
+              icon: <Linkedin size={20} />,
+              href: "https://www.linkedin.com/in/hugopuybareau/",
+            },
+            {
+              icon: <Mail size={20} />,
+              href: "mailto:hugo.puybareau@etu.ec-lyon.fr",
+            },
+            {
+              icon: <Code size={20} />,
+              href: "https://github.com/hugopuybareau/portfolio",
+            }, // repo
+          ].map(({ icon, href }, idx) => (
+            <a
+              key={idx}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-gray-400 hover:text-ocean-400 transition duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+            >
+              {icon}
+            </a>
+          ))}
+        </div>
+      </motion.footer>
+    </motion.div>
+  );
 };
 
 export default ContactPage;
