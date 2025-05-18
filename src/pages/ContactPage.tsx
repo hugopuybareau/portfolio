@@ -69,7 +69,6 @@ const ContactPage: React.FC = () => {
         <motion.div
           className="flex flex-col sm:flex-row gap-4 mt-10"
           variants={fadeIn}
-          custom={20}
         >
           <a
             href="/resume_PUYBAREAU.pdf"

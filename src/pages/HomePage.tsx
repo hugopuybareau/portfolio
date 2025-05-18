@@ -195,7 +195,6 @@ const HomePage: React.FC = () => {
       <motion.footer
         className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
         variants={fadeIn}
-        custom={21}
       >
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
           © 2025 Hugo Puybareau
