@@ -46,54 +46,45 @@ const AboutPage: React.FC = () => {
         </li>
       </ul>
 
+      {/* Divider */}
       <div className="flex items-center justify-center gap-4 my-12">
         <div className="flex-1 h-px bg-gray-700" />
         <span className="text-ocean-400 text-sm font-mono">≋</span>
         <div className="flex-1 h-px bg-gray-700" />
       </div>
 
+      {/* Image Grid 1 */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mb-8">
-        <img
-          src="/photos/BJJ.png"
-          alt="BJJ"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
-        <img
-          src="/photos/nogi-2.png"
-          alt="Surfing"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
-        <img
-          src="/photos/nogi.png"
-          alt="Rugby"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
+        {["BJJ", "nogi-2", "nogi"].map((img, i) => (
+          <img
+            key={i}
+            src={`/photos/${img}.png`}
+            alt={img}
+            className="rounded-xl shadow-md object-cover h-64 w-full"
+          />
+        ))}
       </div>
 
+      {/* Divider */}
       <div className="flex items-center justify-center gap-4 my-12">
         <div className="flex-1 h-px bg-gray-700" />
         <span className="text-ocean-400 text-sm font-mono">≋</span>
         <div className="flex-1 h-px bg-gray-700" />
       </div>
 
+      {/* Image Grid 2 */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mb-16">
-        <img
-          src="/photos/nz2.png"
-          alt="Skiing"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
-        <img
-          src="/photos/nz.png"
-          alt="Philippines"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
-        <img
-          src="/photos/rugby.png"
-          alt="Dev"
-          className="rounded-xl shadow-md object-cover h-64 w-full"
-        />
+        {["nz2", "nz", "rugby"].map((img, i) => (
+          <img
+            key={i}
+            src={`/photos/${img}.png`}
+            alt={img}
+            className="rounded-xl shadow-md object-cover h-64 w-full"
+          />
+        ))}
       </div>
 
+      {/* Footer */}
       <motion.footer
         className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
         variants={fadeIn}
@@ -119,7 +110,7 @@ const AboutPage: React.FC = () => {
             {
               icon: <Code size={20} />,
               href: "https://github.com/hugopuybareau/portfolio",
-            }, // repo
+            },
           ].map(({ icon, href }, idx) => (
             <a
               key={idx}

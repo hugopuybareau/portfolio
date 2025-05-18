@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Mail, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation(); // get current route
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,12 +17,20 @@ const Header: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const navLinks = [
+        { label: 'home', to: '/' },
+        { label: 'projects', to: '/projects' },
+        { label: 'about', to: '/about' },
+        { label: 'contact', to: '/contact' },
+    ];
+
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                scrolled
                     ? 'backdrop-blur bg-dark-950/60 border-b border-gray-800 py-3'
                     : 'bg-transparent py-5'
-                }`}
+            }`}
         >
             <div className="max-w-2xl mx-auto px-4 flex justify-between items-center">
                 <Link to="/" className="text-xl md:text-2xl font-bold tracking-tight">
@@ -32,16 +41,15 @@ const Header: React.FC = () => {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-6 text-sm font-mono">
-                    {[
-                        { label: 'home', to: '/' },
-                        { label: 'projects', to: '/projects' },
-                        { label: 'about', to: '/about' },
-                        { label: 'contact', to: '/contact' },
-                    ].map((item) => (
+                    {navLinks.map((item) => (
                         <Link
                             key={item.to}
                             to={item.to}
-                            className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            className={`relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${
+                                location.pathname === item.to
+                                    ? 'text-ocean-400 before:w-full'
+                                    : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'
+                            }`}
                         >
                             {item.label}
                         </Link>
@@ -62,17 +70,16 @@ const Header: React.FC = () => {
             {isMenuOpen && (
                 <div className="md:hidden absolute top-full left-0 right-0 bg-dark-900 border-t border-gray-800 shadow-lg">
                     <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col space-y-5 font-mono">
-                        {[
-                            { label: 'home', to: '/' },
-                            { label: 'projects', to: '/projects' },
-                            { label: 'about', to: '/about' },
-                            { label: 'contact', to: '/contact' },
-                        ].map((item) => (
+                        {navLinks.map((item) => (
                             <Link
                                 key={item.to}
                                 to={item.to}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="text-gray-300 hover:text-ocean-400 transition-colors"
+                                className={`transition-colors ${
+                                    location.pathname === item.to
+                                        ? 'text-ocean-400'
+                                        : 'text-gray-300 hover:text-ocean-400'
+                                }`}
                             >
                                 {item.label}
                             </Link>
@@ -80,7 +87,7 @@ const Header: React.FC = () => {
 
                         <div className="flex space-x-4 pt-2 text-gray-400">
                             <a
-                                href="https://github.com"
+                                href="https://github.com/hugopuybareau"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-white transition-colors"
@@ -89,7 +96,7 @@ const Header: React.FC = () => {
                                 <Github size={20} />
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/hugopuybareau/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-white transition-colors"
@@ -98,14 +105,14 @@ const Header: React.FC = () => {
                                 <Linkedin size={20} />
                             </a>
                             <a
-                                href="mailto:your@email.com"
+                                href="mailto:hugo.puybareau@etu.ec-lyon.fr"
                                 className="hover:text-white transition-colors"
                                 aria-label="Email"
                             >
                                 <Mail size={20} />
                             </a>
                             <a
-                                href="/resume.pdf"
+                                href="/resume_PUYBAREAU.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-white transition-colors"

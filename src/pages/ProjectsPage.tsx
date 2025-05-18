@@ -1,134 +1,205 @@
-import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from '../components/Navigation';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Code, ArrowRight } from "lucide-react";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  category: string;
-  year: number;
-}
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const projects = [
+  {
+    title: "LLM-powered SaaS for Manuscript Analysis",
+    date: "Mar – Aug 2025",
+    image: "/photos/projects/pleiade.png",
+    description:
+      "Designed and built an end-to-end GenAI-powered SaaS platform to assist publishers in analyzing raw manuscripts...",
+    bullets: [
+      "React + TypeScript + Vite frontend, FastAPI backend",
+      "Complex RAG pipeline: prompt refinement, intent detection, reranking",
+      "Qdrant dynamic setup, SSE streaming, chat history handling",
+      "Book cover analysis/generation module with SDXL + ControlNet, DALL·E 3",
+    ],
+    github: null,
+  },
+  {
+    title: "QRT Data Challenge 2024",
+    date: "2024",
+    image: "/photos/projects/certificate.png",
+    description:
+      "Developed ML algorithms to predict outcomes of football matches...",
+    bullets: [
+      "Aggregated player stats by team and groups of position",
+      "Handled missing data by quantiles (median, prediction, suppression)",
+      "Got best score by stacking models + Bayes search",
+      "Used a stratified K-Fold CV for robust evaluation",
+    ],
+    github: "https://github.com/hugopuybareau/QRT_DATA_CHALLENGE",
+  },
+  {
+    title: "Embedding Analysis Search & Semantic Search Engine",
+    date: "Jan 2025",
+    images: [
+      "/photos/projects/embedding.png",
+      "/photos/projects/visualization.png",
+    ],
+    description:
+      "Built a semantic search engine powered by FastAPI and Sentence-BERT...",
+    bullets: [
+      "Sentence-BERT + FastAPI backend with real-time search API",
+      "React frontend with smooth animations and query interface",
+      "Compared TF-IDF, CBOW/Skip-gram, and SBERT embeddings",
+      "Detailed markdowns on embedding analysis of similarities and visualization",
+    ],
+    github: "https://github.com/hugopuybareau/Embedding-Analysis-Search",
+  },
+  {
+    title: "Tech article writer: web scraping + BART fine-tuning",
+    date: "Oct 2024",
+    image: "/photos/projects/finetuning.png",
+    description:
+      "Built a pipeline to scrape tech headlines and fine-tune a BART model...",
+    bullets: [
+      "Scraped Financial Times headlines with BeautifulSoup & newspaper3k",
+      "Created dataset: title → article text pairs for model training",
+      "Used HuggingFace BART and Google Colab for fine-tuning",
+      "Possible improvements: scale dataset, test T5/GPT-2...",
+    ],
+    github: "https://github.com/hugopuybareau/Web-Scraping_NLP-Fine-Tuning",
+  },
+];
 
 const ProjectsPage: React.FC = () => {
-  const projects: Project[] = [
-    {
-      id: "ecommerce-dashboard",
-      title: "E-commerce Dashboard",
-      description: "A comprehensive admin dashboard with intuitive analytics and inventory management.",
-      imageUrl: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Web Application",
-      year: 2023
-    },
-    {
-      id: "travel-blog",
-      title: "Travel Blog Platform",
-      description: "A responsive website for travel enthusiasts to share their adventures and connect.",
-      imageUrl: "https://images.pexels.com/photos/6804581/pexels-photo-6804581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Web Application",
-      year: 2022
-    },
-    {
-      id: "fitness-app",
-      title: "Fitness Tracking App",
-      description: "A mobile app that helps users track workouts and monitor their fitness progress.",
-      imageUrl: "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Mobile App",
-      year: 2022
-    },
-    {
-      id: "portfolio-site",
-      title: "Photography Portfolio",
-      description: "A minimalist portfolio site for a professional photographer to showcase their work.",
-      imageUrl: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Website",
-      year: 2021
-    },
-    {
-      id: "recipe-app",
-      title: "Recipe Finder",
-      description: "An application that allows users to search for recipes based on ingredients they have.",
-      imageUrl: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      category: "Web Application",
-      year: 2021
-    }
-  ];
+  const [currentImage, setCurrentImage] = useState(0);
 
-  // Filter options
-  const categories = Array.from(new Set(projects.map(project => project.category)));
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  
-  // Filtered projects
-  const filteredProjects = selectedCategory 
-    ? projects.filter(project => project.category === selectedCategory)
-    : projects;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % (projects[2].images?.length || 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="pt-24 pb-16 px-4 md:px-6 min-h-screen">
-      <div className="container mx-auto max-w-6xl">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Projects</h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            A selection of my recent work, including web applications, mobile apps, and design projects.
-          </p>
-        </div>
-        
-        {/* Filters */}
-        <div className="mb-10 flex flex-wrap gap-2">
-          <button 
-            className={`px-4 py-2 rounded-md text-sm ${selectedCategory === null ? 'bg-black text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'} transition-colors`}
-            onClick={() => setSelectedCategory(null)}
-          >
-            All
-          </button>
-          {categories.map(category => (
-            <button 
-              key={category}
-              className={`px-4 py-2 rounded-md text-sm ${selectedCategory === category ? 'bg-black text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'} transition-colors`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <div 
-              key={project.id}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
-            >
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <span className="text-sm text-gray-500">{project.year}</span>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="min-h-screen px-4 pt-24 pb-10 max-w-2xl mx-auto text-gray-100 font-mono"
+    >
+      <h1 className="text-3xl font-bold mb-6">My Projects</h1>
+
+      <ul className="grid gap-6">
+        {projects.map((project, i) => (
+          <React.Fragment key={project.title}>
+            <li className="group hover:translate-x-1 transition-transform duration-200">
+              <div className="flex flex-col gap-3">
+                <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                  {project.images ? (
+                    project.images.map((src, index) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={`Screenshot ${index + 1}`}
+                        className={`absolute top-0 left-0 w-full h-full object-cover rounded-lg transition-all duration-700 ease-in-out ${
+                          index === currentImage
+                            ? "opacity-100 translate-x-0 z-10"
+                            : "opacity-0 -translate-x-full z-0"
+                        }`}
+                      />
+                    ))
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-lg transition-transform duration-300"
+                    />
+                  )}
                 </div>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+
                 <div className="flex justify-between items-center">
-                  <span className="text-sm bg-gray-100 px-3 py-1 rounded-full text-gray-600">{project.category}</span>
-                  <Link 
-                    to={`/projects/${project.id}`}
-                    className="text-black font-medium inline-flex items-center group"
-                  >
-                    View details
-                    <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <h2 className="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
+                    {project.title}
+                  </h2>
+
+                  <span className="text-xs text-gray-500 font-mono whitespace-nowrap">
+                    {project.date}
+                  </span>
                 </div>
+
+                <p className="text-gray-300 text-sm">{project.description}</p>
+
+                <ul className="text-gray-400 text-sm list-disc pl-4 space-y-1">
+                  {project.bullets.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+
+                {project.github && (
+                  <div className="flex items-center gap-2 mt-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                    >
+                      View GitHub
+                      <ArrowRight
+                        size={14}
+                        className="ml-1 transition-transform group-hover:translate-x-1"
+                      />
+                    </a>
+                  </div>
+                )}
               </div>
-            </div>
+            </li>
+
+            {i < projects.length - 1 && (
+              <div className="flex items-center justify-center gap-4 my-6">
+                <div className="flex-1 h-px bg-gray-700" />
+                <span className="text-ocean-400 text-sm font-mono">≋</span>
+                <div className="flex-1 h-px bg-gray-700" />
+              </div>
+            )}
+          </React.Fragment>
+        ))}
+      </ul>
+
+      <motion.footer
+        className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
+        variants={fadeIn}
+      >
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
+          © 2025 Hugo Puybareau
+        </div>
+
+        <div className="mt-2 sm:mt-0 flex gap-4">
+          {[
+            { icon: <Github size={20} />, href: "https://github.com/hugopuybareau" },
+            { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/hugopuybareau/" },
+            { icon: <Mail size={20} />, href: "mailto:hugo.puybareau@etu.ec-lyon.fr" },
+            { icon: <Code size={20} />, href: "https://github.com/hugopuybareau/portfolio" },
+          ].map(({ icon, href }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-gray-400 hover:text-ocean-400 transition duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+            >
+              {icon}
+            </a>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.footer>
+    </motion.div>
   );
 };
 
