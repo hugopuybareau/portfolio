@@ -47,6 +47,8 @@ const HomePage: React.FC = () => {
               <a
                 href="https://www.ec-lyon.fr/formation/ingenieur-generaliste"
                 className="relative left-[4px] top-[3px] hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 École Centrale de Lyon
               </a>
@@ -72,6 +74,8 @@ const HomePage: React.FC = () => {
                   <a
                     href="https://challengedata.ens.fr/challenges/143"
                     className="relative left-[4px] top-[3px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     QRT Data Challenge 2024
                   </a>
@@ -104,6 +108,8 @@ const HomePage: React.FC = () => {
               <a
                 href="https://demandsens.ai/en/"
                 className="relative top-[3px] left-[4px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 BearingPoint
               </a>{" "}
@@ -132,6 +138,8 @@ const HomePage: React.FC = () => {
               <a
                 href="https://group.bnpparibas/"
                 className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 BNP Paribas
               </a>{" "}
@@ -158,6 +166,8 @@ const HomePage: React.FC = () => {
               <a
                 href="https://graciebarra75.com/"
                 className="relative left-[4px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 font-medium"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Gracie Barra Paris
               </a>
