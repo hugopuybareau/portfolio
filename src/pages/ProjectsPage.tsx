@@ -19,7 +19,15 @@ const projects = [
   {
     title: "LLM-powered SaaS for Manuscript Analysis",
     date: "Mar – Aug 2025",
-    image: "/photos/projects/pleiade.png",
+    images: [
+      "/photos/projects/pleiade.png",
+      "/photos/projects/pleiade_1.png",
+      "/photos/projects/pleiade_2.png",
+      "/photos/projects/pleiade_3.png",
+      "/photos/projects/pleiade_4.png",
+      "/photos/projects/pleiade_5.png",
+      "/photos/projects/pleiade_6.png",
+    ],
     description:
       "Designed and built an end-to-end GenAI-powered SaaS platform to assist publishers in analyzing raw manuscripts...",
     bullets: [
@@ -33,7 +41,7 @@ const projects = [
   {
     title: "QRT Data Challenge 2024",
     date: "2024",
-    image: "/photos/projects/certificate.png",
+    images: ["/photos/projects/certificate.png"],
     description:
       "Developed ML algorithms to predict outcomes of football matches...",
     bullets: [
@@ -64,7 +72,7 @@ const projects = [
   {
     title: "Tech article writer: web scraping + BART fine-tuning",
     date: "Oct 2024",
-    image: "/photos/projects/finetuning.png",
+    images: ["/photos/projects/finetuning.png"],
     description:
       "Built a pipeline to scrape tech headlines and fine-tune a BART model...",
     bullets: [
@@ -78,12 +86,20 @@ const projects = [
 ];
 
 const ProjectsPage: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number[]>([]);
 
   useEffect(() => {
+    setCurrentImageIndex(new Array(projects.length).fill(0));
+
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % (projects[2].images?.length || 1));
-    }, 5000);
+      setCurrentImageIndex((prevIndexes) =>
+        prevIndexes.map((current, i) => {
+          const imagesLength = projects[i].images?.length || 1;
+          return (current + 1) % imagesLength;
+        })
+      );
+    }, 4000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -102,26 +118,19 @@ const ProjectsPage: React.FC = () => {
             <li className="group hover:translate-x-1 transition-transform duration-200">
               <div className="flex flex-col gap-3">
                 <div className="relative w-full h-48 rounded-lg overflow-hidden">
-                  {project.images ? (
+                  {Array.isArray(project.images) &&
                     project.images.map((src, index) => (
                       <img
                         key={src}
                         src={src}
                         alt={`Screenshot ${index + 1}`}
                         className={`absolute top-0 left-0 w-full h-full object-cover rounded-lg transition-all duration-700 ease-in-out ${
-                          index === currentImage
+                          currentImageIndex[i] === index
                             ? "opacity-100 translate-x-0 z-10"
                             : "opacity-0 -translate-x-full z-0"
                         }`}
                       />
-                    ))
-                  ) : (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover rounded-lg transition-transform duration-300"
-                    />
-                  )}
+                    ))}
                 </div>
 
                 <div className="flex justify-between items-center">
@@ -182,10 +191,22 @@ const ProjectsPage: React.FC = () => {
 
         <div className="mt-2 sm:mt-0 flex gap-4">
           {[
-            { icon: <Github size={20} />, href: "https://github.com/hugopuybareau" },
-            { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/hugopuybareau/" },
-            { icon: <Mail size={20} />, href: "mailto:hugo.puybareau@etu.ec-lyon.fr" },
-            { icon: <Code size={20} />, href: "https://github.com/hugopuybareau/portfolio" },
+            {
+              icon: <Github size={20} />,
+              href: "https://github.com/hugopuybareau",
+            },
+            {
+              icon: <Linkedin size={20} />,
+              href: "https://www.linkedin.com/in/hugopuybareau/",
+            },
+            {
+              icon: <Mail size={20} />,
+              href: "mailto:hugo.puybareau@etu.ec-lyon.fr",
+            },
+            {
+              icon: <Code size={20} />,
+              href: "https://github.com/hugopuybareau/portfolio",
+            },
           ].map(({ icon, href }) => (
             <a
               key={href}
