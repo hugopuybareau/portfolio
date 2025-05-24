@@ -24,7 +24,6 @@ const projects = [
       "/photos/projects/pleiade_1.png",
       "/photos/projects/pleiade_2.png",
       "/photos/projects/pleiade_3.png",
-      "/photos/projects/pleiade_4.png",
       "/photos/projects/pleiade_5.png",
       "/photos/projects/pleiade_6.png",
     ],
