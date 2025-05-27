@@ -28,21 +28,21 @@ const HomePage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="min-h-screen px-4 pt-24 pb-10 max-w-2xl mx-auto text-gray-100 font-mono"
+            className="min-h-screen text-sm sm:text-base px-4 pt-16 sm:pt-24 pb-8 sm:pb-10 max-w-2xl mx-auto text-gray-100 font-mono"
         >
-            <ul className="grid gap-1 text-base">
-                <li className="group flex items-start gap-4 pl-4 relative hover:translate-x-1 transition-transform duration-200 leading-relaxed">
+            <ul className="grid gap-1 text-sm sm:text-base">
+                <li className="pl-4 relative hover:translate-x-1 transition-transform duration-200 leading-relaxed">
                     <span>🏄 AI/ML engineer, student, and builder of intelligent products.</span>
                 </li>
 
-                <li className="group flex items-start gap-4 pl-4 relative hover:translate-x-1 transition-transform duration-200">
+                <li className="pl-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span className="text-gray-300">
-                        🎓 CS & engineering @{" "}
-                        <span className="inline-flex items-center gap-1">
+                        🎓 CS & eng @{" "}
+                        <span className="inline-flex flex-wrap items-center gap-1">
                             <img
                                 src={CentraleLyonLogo}
                                 alt="Centrale Lyon"
-                                className="w-4 h-4 object-contain relative top-[3px]"
+                                className="w-4 h-4 object-contain relative sm:top-[5px]"
                             />
                             <a
                                 href="https://www.ec-lyon.fr/formation/ingenieur-generaliste"
@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
                     </span>
                 </li>
 
-                <li className="group flex items-start gap-4 pl-4 relative italic text-gray-400">
+                <li className="group pl-4 relative italic text-gray-400">
                     recently:
                 </li>
 
@@ -64,23 +64,24 @@ const HomePage: React.FC = () => {
                     {
                         label: (
                             <>
-                                ↳ finalist @{" "}
-                                <span className="inline-flex items-center gap-1">
+                                <span className="inline-flex items-center gap-1 flex-wrap">
+                                    ↳ finalist @
                                     <img
                                         src={QRTLogo}
                                         alt="QRT Logo"
-                                        className="w-4 h-4 object-contain relative top-[3px]"
+                                        className="w-4 h-4 object-contain relative left-[5px]"
                                     />
                                     <a
                                         href="https://challengedata.ens.fr/challenges/143"
-                                        className="relative left-[4px] top-[3px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 relative before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
                                         QRT Data Challenge 2024
-                                    </a>
-                                    <a className="relative left-[4px] top-[3px]">(4th/800)</a>
-                                </span>{" "}
+                                    </a>{" "}
+                                    <span className="text-gray-400 relative left-[10px]">(4th/800)</span>
+                                </span>
+
                             </>
                         ),
                     },
@@ -90,33 +91,29 @@ const HomePage: React.FC = () => {
                 ].map(({ label }, i) => (
                     <li
                         key={i}
-                        className="group flex items-start gap-4 pl-8 relative hover:translate-x-1 transition-transform duration-200"
+                        className="group inline-flex flew-wrap items-start gap-4 pl-8 relative hover:translate-x-1 transition-transform duration-200"
                     >
                         <span className="text-gray-300">{label}</span>
                     </li>
                 ))}
 
-                <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span>
-                        💼 MLE intern @{" "}
-                        <span className="inline-flex items-center gap-1">
-                            <img
-                                src={DemandsensLogo}
-                                alt="Demandsens Logo"
-                                className="w-4 h-4 object-contain relative top-[3px]"
-                            />
-                            <a
-                                href="https://demandsens.ai/en/"
-                                className="relative top-[3px] left-[4px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                BearingPoint
-                            </a>{" "}
-                            <span className="text-gray-400 relative top-[3px] left-[4px]">
-                                (Mar 2025 – Present)
-                            </span>
-                        </span>
+                <li className="group pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
+                    <span className="inline-flex items-center gap-1 flex-wrap text-gray-300">
+                        💼 MLE intern @
+                        <img
+                            src={DemandsensLogo}
+                            alt="Demandsens Logo"
+                            className="w-4 h-4 object-contain relative left-[5px]"
+                        />
+                        <a
+                            href="https://demandsens.ai/en/"
+                            className="text-gray-300 relative left-[10px] hover:text-ocean-400 transition duration-200 relative before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            BearingPoint
+                        </a>{" "}
+                        <span className="text-gray-400 relative left-[10px]">(Mar 2025 – Present)</span>
                     </span>
                 </li>
                 <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
@@ -128,7 +125,7 @@ const HomePage: React.FC = () => {
 
                 <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span>
-                        <span className="inline-flex items-center gap-1">
+                        <span className="inline-flex flex-wrap items-center gap-1">
                             💼 Data science intern @{" "}
                             <img
                                 src={BNPLogo}
@@ -156,7 +153,7 @@ const HomePage: React.FC = () => {
 
                 <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span className="text-gray-300">
-                        <span className="inline-flex items-center gap-1">
+                        <span className="inline-flex flex-wrap items-center gap-1">
                             <a className="relative left-[-4px]">🥋 Training BJJ @</a>
                             <img
                                 src={GracieBarraLogo}
