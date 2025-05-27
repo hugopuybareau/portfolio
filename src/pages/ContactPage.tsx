@@ -32,7 +32,7 @@ const ContactPage: React.FC = () => {
                 </p>
 
                 <div className="flex justify-center items-center gap-6 mb-10">
-                    <AnimatedH />
+                    <div className="hidden sm:block"><AnimatedH /></div>
                     <img
                         src="/photos/7.png"
                         alt="Hugo Puybareau"
