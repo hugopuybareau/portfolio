@@ -34,7 +34,7 @@ const ContactPage: React.FC = () => {
                 <div className="flex justify-center items-center gap-6 mb-10">
                     <div className="hidden sm:block"><AnimatedH /></div>
                     <img
-                        src="/photos/7.png"
+                        src="/photos/7.jpeg"
                         alt="Hugo Puybareau"
                         className="w-[250px] h-[250px] rounded-full object-cover shadow-lg border-4 border-transparent bg-gradient-to-r from-ocean-400 to-ocean-600 p-1"
                     />

@@ -61,6 +61,7 @@ const HomePage: React.FC = () => {
                 </li>
 
                 {[
+                    { label: "↳ building an agent that helps you optimize your finances" },
                     {
                         label: (
                             <>

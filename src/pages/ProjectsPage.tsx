@@ -20,12 +20,12 @@ const projects = [
     title: "LLM-powered SaaS for Manuscript Analysis",
     date: "Mar – Aug 2025",
     images: [
-      "/photos/projects/pleiade.png",
-      "/photos/projects/pleiade_1.png",
-      "/photos/projects/pleiade_2.png",
-      "/photos/projects/pleiade_3.png",
-      "/photos/projects/pleiade_5.png",
-      "/photos/projects/pleiade_6.png",
+      "/photos/projects/pleiade.jpeg",
+      "/photos/projects/pleiade_1.jpeg",
+      "/photos/projects/pleiade_2.jpeg",
+      "/photos/projects/pleiade_3.jpeg",
+      "/photos/projects/pleiade_5.jpeg",
+      "/photos/projects/pleiade_6.jpeg",
     ],
     description:
       "Designed and built an end-to-end GenAI-powered SaaS platform to assist publishers in analyzing raw manuscripts...",
@@ -40,7 +40,7 @@ const projects = [
   {
     title: "QRT Data Challenge 2024",
     date: "2024",
-    images: ["/photos/projects/certificate.png"],
+    images: ["/photos/projects/certificate.jpeg"],
     description:
       "Developed ML algorithms to predict outcomes of football matches...",
     bullets: [
@@ -55,8 +55,8 @@ const projects = [
     title: "Embedding Analysis Search & Semantic Search Engine",
     date: "Jan 2025",
     images: [
-      "/photos/projects/embedding.png",
-      "/photos/projects/visualization.png",
+      "/photos/projects/embedding.jpeg",
+      "/photos/projects/visualization.jpeg",
     ],
     description:
       "Built a semantic search engine powered by FastAPI and Sentence-BERT...",
@@ -71,7 +71,7 @@ const projects = [
   {
     title: "Tech article writer: web scraping + BART fine-tuning",
     date: "Oct 2024",
-    images: ["/photos/projects/finetuning.png"],
+    images: ["/photos/projects/finetuning.jpeg"],
     description:
       "Built a pipeline to scrape tech headlines and fine-tune a BART model...",
     bullets: [

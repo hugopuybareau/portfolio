@@ -58,7 +58,7 @@ const AboutPage: React.FC = () => {
         {["BJJ", "nogi-2", "nogi"].map((img, i) => (
           <img
             key={i}
-            src={`/photos/${img}.png`}
+            src={`/photos/${img}.jpeg`}
             alt={img}
             className="rounded-xl shadow-md object-cover h-64 w-full"
           />
@@ -77,7 +77,7 @@ const AboutPage: React.FC = () => {
         {["nz2", "nz", "rugby"].map((img, i) => (
           <img
             key={i}
-            src={`/photos/${img}.png`}
+            src={`/photos/${img}.jpeg`}
             alt={img}
             className="rounded-xl shadow-md object-cover h-64 w-full"
           />
