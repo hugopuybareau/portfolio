@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Github, Linkedin, Code } from "lucide-react";
 
 // import AnimatedLogo from "../components/Signature";
-import AnimatedH from "../components/AnimatedH";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -31,8 +30,7 @@ const ContactPage: React.FC = () => {
                     I'm always open to discussing new projects & creative ideas!
                 </p>
 
-                <div className="flex justify-center items-center gap-6 mb-10">
-                    <div className="hidden sm:block"><AnimatedH /></div>
+                <div className="flex justify-center items-center mb-10">
                     <img
                         src="/photos/7.jpeg"
                         alt="Hugo Puybareau"

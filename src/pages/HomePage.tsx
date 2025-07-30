@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
                 </li>
 
                 {[
-                    { label: "↳ building an agent that helps you optimize your finances" },
+                    { label: "↳ building platine-agents.com" },
                     {
                         label: (
                             <>
@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
                                     />
                                     <a
                                         href="https://challengedata.ens.fr/challenges/143"
-                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 relative before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
 
                 <li className="group pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span className="inline-flex items-center gap-1 flex-wrap text-gray-300">
-                        💼 MLE intern @
+                        💼 AI engineer @
                         <img
                             src={DemandsensLogo}
                             alt="Demandsens Logo"
@@ -108,26 +108,26 @@ const HomePage: React.FC = () => {
                         />
                         <a
                             href="https://demandsens.ai/en/"
-                            className="text-gray-300 relative left-[10px] hover:text-ocean-400 transition duration-200 relative before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            className="text-gray-300 relative left-[10px] hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             BearingPoint
                         </a>{" "}
-                        <span className="text-gray-400 relative left-[10px]">(Mar 2025 – Present)</span>
+                        <span className="text-gray-400 relative left-[10px]">(Mar - Aug 2025)</span>
                     </span>
                 </li>
                 <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • built an LLM-powered SaaS with Azure OpenAI + LangChain
+                    • built an LLM-powered SaaS to analyze book manuscripts
                 </li>
                 <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • built a chatbot (RAG, reranking, intent detection, prompt refinement, sse streaming)
+                    • designed a complex RAG architecture and an asynchronous job management
                 </li>
 
                 <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span>
                         <span className="inline-flex flex-wrap items-center gap-1">
-                            💼 Data science intern @{" "}
+                            💼 Data scientist @{" "}
                             <img
                                 src={BNPLogo}
                                 alt="BNP Paribas Logo"
