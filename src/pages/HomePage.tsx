@@ -8,6 +8,7 @@ import BNPLogo from "/icons/bnpParibas.png";
 import DemandsensLogo from "/icons/demandsens.png";
 import GracieBarraLogo from "/icons/gracieBarra.png";
 import QRTLogo from "/icons/qrtLogo.png";
+import silveragentsLogo from "/icons/silveragents.png";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -61,7 +62,29 @@ const HomePage: React.FC = () => {
                 </li>
 
                 {[
-                    { label: "↳ building platine-agents.com" },
+                    {
+                        label: (
+                            <>
+                                <span className="inline-flex items-center gap-1 flex-wrap">
+                                    ↳ building ai agents @
+                                    <img
+                                        src={silveragentsLogo}
+                                        alt="Silver Agents Logo"
+                                        className="w-6 h-6 object-contain relative left-[5px]"
+                                    />
+                                    <a
+                                        href="https://www.linkedin.com/company/silveragents/"
+                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                        silveragents.ai
+                                    </a>{" "}
+                                </span>
+
+                            </>
+                        ),
+                    },
                     {
                         label: (
                             <>
@@ -70,7 +93,7 @@ const HomePage: React.FC = () => {
                                     <img
                                         src={QRTLogo}
                                         alt="QRT Logo"
-                                        className="w-4 h-4 object-contain relative left-[5px]"
+                                        className="w-6 h-6 object-contain relative left-[5px]"
                                     />
                                     <a
                                         href="https://challengedata.ens.fr/challenges/143"
@@ -104,7 +127,7 @@ const HomePage: React.FC = () => {
                         <img
                             src={DemandsensLogo}
                             alt="Demandsens Logo"
-                            className="w-4 h-4 object-contain relative left-[5px]"
+                            className="w-6 h-6 object-contain relative left-[5px]"
                         />
                         <a
                             href="https://demandsens.ai/en/"
@@ -131,7 +154,7 @@ const HomePage: React.FC = () => {
                             <img
                                 src={BNPLogo}
                                 alt="BNP Paribas Logo"
-                                className="w-4 h-4 object-contain relative left-[5px]"
+                                className="w-6 h-6 object-contain relative left-[5px]"
                             />
                             <a
                                 href="https://group.bnpparibas/"
@@ -159,7 +182,7 @@ const HomePage: React.FC = () => {
                             <img
                                 src={GracieBarraLogo}
                                 alt="Gracie Barra Logo"
-                                className="w-4 h-4 object-contain align-middle"
+                                className="w-6 h-6 object-contain align-middle"
                             />
                             <a
                                 href="https://graciebarra75.com/"

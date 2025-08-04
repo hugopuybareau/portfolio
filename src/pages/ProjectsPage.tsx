@@ -20,6 +20,7 @@ const projects = [
         title: 'LLM-powered SaaS for Manuscript Analysis',
         date: 'Mar – Aug 2025',
         images: [
+            '/photos/projects/pleiade_9.jpeg',
             '/photos/projects/pleiade.jpeg',
             '/photos/projects/pleiade_1.jpeg',
             '/photos/projects/pleiade_2.jpeg',
