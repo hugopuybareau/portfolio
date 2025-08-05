@@ -66,15 +66,15 @@ const HomePage: React.FC = () => {
                         label: (
                             <>
                                 <span className="inline-flex items-center gap-1 flex-wrap">
-                                    ↳ building ai agents @
+                                    ↳ building agents @
                                     <img
                                         src={silveragentsLogo}
                                         alt="Silver Agents Logo"
-                                        className="w-6 h-6 object-contain relative left-[5px]"
+                                        className="w-6 h-6 object-contain relative left-[2px]"
                                     />
                                     <a
                                         href="https://www.linkedin.com/company/silveragents/"
-                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative left-[6px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
@@ -89,21 +89,20 @@ const HomePage: React.FC = () => {
                         label: (
                             <>
                                 <span className="inline-flex items-center gap-1 flex-wrap">
-                                    ↳ finalist @
+                                    ↳ 4th @
                                     <img
                                         src={QRTLogo}
                                         alt="QRT Logo"
-                                        className="w-6 h-6 object-contain relative left-[5px]"
+                                        className="w-6 h-6 object-contain relative left-[2px]"
                                     />
                                     <a
                                         href="https://challengedata.ens.fr/challenges/143"
-                                        className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative left-[6px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
                                         QRT Data Challenge 2024
                                     </a>{" "}
-                                    <span className="text-gray-400 relative left-[10px]">(4th/800)</span>
                                 </span>
 
                             </>
