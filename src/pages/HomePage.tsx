@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
                                         className="w-6 h-6 object-contain self-end"
                                     />
                                     <a
-                                        href="https://www.linkedin.com/company/silveragents/"
+                                        href="https://www.silveragents.ai"
                                         className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
@@ -100,14 +100,15 @@ const HomePage: React.FC = () => {
                     {
                         label: (
                             <>
-                                ↳ built a funny agentic trading platform on Jade {" "}
+                                ↳ built a funny {" "}
                                 <span className="inline-flex items-baseline gap-1">
                                     <a
-                                        href="https://www.linkedin.com/company/silveragents/"
+                                        href="https://x.com/hugopuybareau/status/1988311235218334119?s=20"
                                         className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
+                                        agentic trading platform on Jade
                                     </a>
                                 </span>
                             </>
@@ -123,14 +124,12 @@ const HomePage: React.FC = () => {
                                         alt="Tech Europe Logo"
                                         className="w-6 h-6 object-contain self-end"
                                     />
-                                    <a
-                                        href="https://www.linkedin.com/company/silveragents/"
+                                    <Link
+                                        to="/projects"
                                         className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
                                     >
                                         {" "}Tech Europe's Berlin Hackathon
-                                    </a>
+                                    </Link>
                                 </span>
                             </>
                         ),

@@ -38,19 +38,12 @@ const AboutPage: React.FC = () => {
 
       <ul className="space-y-6 text-base leading-relaxed">
         <li>
-          💻 I'm an AI engineer and product-focused developer with
-          a passion for building intelligent tools. I studied engineering at
+          I'm an AI engineer and product-focused developer working as an AI startup founder with Maxence Rossignol. I studied engineering at
           Centrale de Lyon and developed hands-on expertise in NLP, GenAI, and
           full-stack product development.
         </li>
         <li>
-          I've built and deployed my first AI-powered SaaS during my last
-          internship at BearingPoint. I also produced predictive modeling
-          systems using machine learning algorithms for BNP Paribas. I enjoy
-          crafting elegant UIs or building scalable backends.
-        </li>
-        <li>
-          🏄 Outside of tech, I train Brazilian Jiu-Jitsu at Gracie Barra Paris,
+          🏄 Outside of tech, I train Brazilian Jiu-Jitsu,
           enjoy skiing with family & friends, surfed around New Zealand and the
           Philippines in 2025, and played on my school’s rugby team (XV and 7s).
         </li>

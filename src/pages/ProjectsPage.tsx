@@ -27,7 +27,51 @@ const XIcon = ({ size = 20 }: { size?: number }) => (
     </svg>
 );
 
+const HackerNewsIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-5.064l4.3-7.708h-1.4l-3.5 6.5-3.5-6.5H6.951z" />
+    </svg>
+);
+
 const projects = [
+    {
+        title: 'Agentic Trading Platform on Jade',
+        date: 'November 2025',
+        video: 'https://github.com/user-attachments/assets/552750d6-e83a-4985-b2d4-5b4412cbb4aa',
+        description:
+            'What happens when you let autonomous agents trade against each other? This project we did for school simulates a complete stock market where AI agents with different personalities and strategies compete for profit. Watch as market bubbles form, crashes unfold, and emergent behaviors arise from simple interactions.',
+        bullets: [
+            'full Java orchestration on Jade multi-agent platform',
+            'runs with 60x time acceleration',
+        ],
+        github: "https://github.com/hugopuybareau/Agentic-Trading-Platform",
+        xPost: "https://x.com/hugopuybareau/status/1988311235218334119?s=20",
+        linkedinPost: null,
+        hackerNewsPost: "https://news.ycombinator.com/item?id=45890841",
+    },
+    {
+        title: "Tech Europe's Berlin Hackathon submission",
+        date: 'October 2025',
+        images: [
+            '/photos/projects/hackathon_1.JPG',
+            '/photos/projects/hackathon_2.JPG',
+        ],
+        description: "We entered the Wild Card track and built the first MVP of silveragents — an AI overlay that streamlines developer onboarding. It automatically generates a customized onboarding template based on your project's stack, architecture, and docs.",
+        bullets: [
+            'overlay running on rust backend with Tauri + React frontend',
+            'n8n workflow for repo ingestion + sandboxing',
+        ],
+        github: null,
+        xPost: null,
+        linkedinPost: "https://www.linkedin.com/posts/hugopuybareau_this-weekend-maxence-rossignol-and-i-had-activity-7384468281514049536-1Qk2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2cL-wB1XsPIhgnTqqOqL_lL3NdXksXaqc",
+        hackerNewsPost: "https://news.ycombinator.com/item?id=45890841",
+    },
     {
         title: 'LLM-powered SaaS for Manuscript Analysis',
         date: 'Mar – Aug 2025',
@@ -53,6 +97,9 @@ const projects = [
             'Book cover analysis/generation module with gpt-image-1',
         ],
         github: null,
+        xPost: null,
+        linkedinPost: "https://www.linkedin.com/posts/hugopuybareau_excited-to-announce-that-maxence-rossignol-activity-7371152514609627156-860X?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2cL-wB1XsPIhgnTqqOqL_lL3NdXksXaqc",
+        hackerNewsPost: null,
     },
     {
         title: 'QRT Data Challenge 2024',
@@ -67,6 +114,9 @@ const projects = [
             'Used a stratified K-Fold CV for robust evaluation',
         ],
         github: 'https://github.com/hugopuybareau/QRT_DATA_CHALLENGE',
+        xPost: null,
+        linkedinPost: null,
+        hackerNewsPost: null,
     },
     {
         title: 'Embedding Analysis Search & Semantic Search Engine',
@@ -84,6 +134,9 @@ const projects = [
             'Detailed markdowns on embedding analysis of similarities and visualization',
         ],
         github: 'https://github.com/hugopuybareau/Embedding-Analysis-Search',
+        xPost: null,
+        linkedinPost: null,
+        hackerNewsPost: null,
     },
     {
         title: 'Tech article writer: web scraping + BART fine-tuning',
@@ -98,6 +151,9 @@ const projects = [
             'Possible improvements: scale dataset, test T5/GPT-2...',
         ],
         github: 'https://github.com/hugopuybareau/Web-Scraping_NLP-Fine-Tuning',
+        xPost: null,
+        linkedinPost: null,
+        hackerNewsPost: null,
     },
 ];
 
@@ -134,7 +190,17 @@ const ProjectsPage: React.FC = () => {
                         <li className="group hover:translate-x-1 transition-transform duration-200">
                             <div className="flex flex-col gap-3">
                                 <div className="relative w-full h-48 rounded-lg overflow-hidden">
-                                    {Array.isArray(project.images) &&
+                                    {project.video ? (
+                                        <video
+                                            src={project.video}
+                                            className="w-full h-full object-contain rounded-lg bg-dark-800"
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                        />
+                                    ) : (
+                                        Array.isArray(project.images) &&
                                         project.images.map((src, index) => (
                                             <img
                                                 key={src}
@@ -147,7 +213,8 @@ const ProjectsPage: React.FC = () => {
                                                         : 'opacity-0 -translate-x-full z-0'
                                                 }`}
                                             />
-                                        ))}
+                                        ))
+                                    )}
                                 </div>
 
                                 <div className="flex justify-between items-center">
@@ -170,20 +237,68 @@ const ProjectsPage: React.FC = () => {
                                     ))}
                                 </ul>
 
-                                {project.github && (
-                                    <div className="flex items-center gap-2 mt-2">
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
-                                        >
-                                            View GitHub
-                                            <ArrowRight
-                                                size={14}
-                                                className="ml-1 transition-transform group-hover:translate-x-1"
-                                            />
-                                        </a>
+                                {(project.github || project.xPost || project.linkedinPost || project.hackerNewsPost) && (
+                                    <div className="flex flex-wrap items-center gap-3 mt-2">
+                                        {project.github && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                                            >
+                                                <Github size={14} className="mr-1" />
+                                                View GitHub
+                                                <ArrowRight
+                                                    size={14}
+                                                    className="ml-1 transition-transform group-hover:translate-x-1"
+                                                />
+                                            </a>
+                                        )}
+                                        {project.xPost && (
+                                            <a
+                                                href={project.xPost}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                                            >
+                                                <XIcon size={14} />
+                                                <span className="ml-1">post</span>
+                                                <ArrowRight
+                                                    size={14}
+                                                    className="ml-1 transition-transform group-hover:translate-x-1"
+                                                />
+                                            </a>
+                                        )}
+                                        {project.linkedinPost && (
+                                            <a
+                                                href={project.linkedinPost}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                                            >
+                                                <Linkedin size={14} className="mr-1" />
+                                                LinkedIn post
+                                                <ArrowRight
+                                                    size={14}
+                                                    className="ml-1 transition-transform group-hover:translate-x-1"
+                                                />
+                                            </a>
+                                        )}
+                                        {project.hackerNewsPost && (
+                                            <a
+                                                href={project.hackerNewsPost}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center text-sm text-ocean-400 hover:text-ocean-300 transition-all before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                                            >
+                                                <HackerNewsIcon size={14} />
+                                                <span className="ml-1">HackerNews page</span>
+                                                <ArrowRight
+                                                    size={14}
+                                                    className="ml-1 transition-transform group-hover:translate-x-1"
+                                                />
+                                            </a>
+                                        )}
                                     </div>
                                 )}
                             </div>
