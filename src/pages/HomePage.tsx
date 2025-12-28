@@ -42,241 +42,248 @@ const HomePage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="min-h-screen text-sm sm:text-base px-4 pt-16 sm:pt-24 pb-8 sm:pb-10 max-w-2xl mx-auto text-gray-100 font-mono"
+            className="min-h-screen px-4 pt-24 sm:pt-30 max-w-2xl mx-auto text-gray-100 font-mono"
         >
-            <ul className="grid gap-1 text-sm sm:text-base">
-                <li className="pl-4 relative hover:translate-x-1 transition-transform duration-200 leading-relaxed">
-                    <span>🏄 AI/ML engineer, student, and builder of intelligent products.</span>
-                </li>
-
-                <li className="pl-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span className="text-gray-300">
-                        🎓 CS & eng @{" "}
-                        <span className="inline-flex flex-wrap items-baseline gap-1">
-                            <img
-                                src={CentraleLyonLogo}
-                                alt="Centrale Lyon"
-                                className="w-6 h-6 object-contain self-end"
-                            />
-                            <a
-                                href="https://www.ec-lyon.fr/formation/ingenieur-generaliste"
-                                className="relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                École Centrale de Lyon
-                            </a>
-                        </span>
-                    </span>
-                </li>
-
-                <li className="group pl-4 relative italic text-gray-400">
-                    recently:
-                </li>
-
-                {[
-                    {
-                        label: (
-                            <>
-                                ↳ built an agent that cuts developer setup time @{" "}
-                                <span className="inline-flex items-baseline gap-1">
-                                    <img
-                                        src={silveragentsLogo}
-                                        alt="Silver Agents Logo"
-                                        className="w-6 h-6 object-contain self-end"
-                                    />
-                                    <a
-                                        href="https://www.silveragents.ai"
-                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                        silveragents.ai
-                                    </a>
-                                </span>
-                            </>
-                        ),
-                    },
-                    {
-                        label: (
-                            <>
-                                ↳ built a funny {" "}
-                                <span className="inline-flex items-baseline gap-1">
-                                    <a
-                                        href="https://x.com/hugopuybareau/status/1988311235218334119?s=20"
-                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                        agentic trading platform on Jade
-                                    </a>
-                                </span>
-                            </>
-                        ),
-                    },
-                    {
-                        label: (
-                            <>
-                                ↳ took part in{" "}
-                                <span className="inline-flex items-baseline gap-1">
-                                    <img
-                                        src={techEuropeLogo}
-                                        alt="Tech Europe Logo"
-                                        className="w-6 h-6 object-contain self-end"
-                                    />
-                                    <Link
-                                        to="/projects"
-                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                    >
-                                        {" "}Tech Europe's Berlin Hackathon
-                                    </Link>
-                                </span>
-                            </>
-                        ),
-                    },
-                    {
-                        label: (
-                            <>
-                                ↳ 4th @{" "}
-                                <span className="inline-flex items-baseline gap-1">
-                                    <img
-                                        src={QRTLogo}
-                                        alt="QRT Logo"
-                                        className="w-6 h-6 object-contain self-end"
-                                    />
-                                    <a
-                                        href="https://challengedata.ens.fr/challenges/143"
-                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                    >
-                                        QRT Data Challenge 2024
-                                    </a>
-                                </span>
-                            </>
-                        ),
-                    },
-                    { label: "↳ built a fact-checking chatbot (RAG + French politics)" },
-                ].map(({ label }, i) => (
-                    <li
-                        key={i}
-                        className="group flex items-start gap-4 pl-4 relative hover:translate-x-1 transition-transform duration-200"
-                    >
-                        <span className="text-gray-300">{label}</span>
-                    </li>
-                ))}
-
-                <li className="group pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span className="inline-flex items-baseline gap-1 flex-wrap text-gray-300">
-                        💼 AI engineer @
+            {/* Intro Section */}
+            <motion.div variants={fadeIn} custom={0} className="mb-6">
+                <p className="text-sm sm:text-base text-gray-100 mb-3 leading-relaxed">
+                    🏄 AI/ML engineer, student, and builder of intelligent products.
+                </p>
+                <p className="text-xs sm:text-sm text-gray-300">
+                    🎓 CS & eng @{" "}
+                    <span className="inline-flex flex-wrap items-baseline gap-1">
                         <img
-                            src={DemandsensLogo}
-                            alt="Demandsens Logo"
-                            className="w-6 h-6 object-contain self-end"
+                            src={CentraleLyonLogo}
+                            alt="Centrale Lyon"
+                            className="w-5 h-5 object-contain self-end mb-1"
                         />
                         <a
-                            href="https://demandsens.ai/en/"
-                            className="text-gray-300 relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            href="https://www.ec-lyon.fr/formation/ingenieur-generaliste"
+                            className="relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            BearingPoint
+                            École Centrale de Lyon
                         </a>
-                        <span className="text-gray-400 relative left-[10px]">(Mar - Aug 2025)</span>
                     </span>
-                </li>
-                <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • built an LLM-powered SaaS to analyze book manuscripts
-                </li>
-                <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • designed a complex RAG architecture and an asynchronous job management
-                </li>
+                </p>
+            </motion.div>
 
-                <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span>
-                        <span className="inline-flex flex-wrap items-baseline gap-1">
-                            💼 Data scientist @{" "}
+            {/* Recent Projects Section */}
+            <motion.section
+                variants={fadeIn}
+                custom={2}
+                className="mb-5 border-l-2 border-ocean-500/30 pl-4 py-2"
+            >
+                <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-4 font-semibold">
+                    Recently
+                </h2>
+                <ul className="space-y-3 text-xs sm:text-sm">
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ built an agent that cuts developer setup time @{" "}
+                        <span className="inline-flex items-baseline self-end gap-1">
+                            <img
+                                src={silveragentsLogo}
+                                alt="Silver Agents Logo"
+                                className="w-5 h-5 object-contain self-end"
+                            />
+                            <a
+                                href="https://www.silveragents.ai"
+                                className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                silveragents.ai
+                            </a>
+                        </span>
+                    </li>
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ built a funny{" "}
+                        <a
+                            href="https://x.com/hugopuybareau/status/1988311235218334119?s=20"
+                            className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            agentic trading platform on Jade
+                        </a>
+                    </li>
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ took part in{" "}
+                        <span className="inline-flex items-baseline gap-1">
+                            <img
+                                src={techEuropeLogo}
+                                alt="Tech Europe Logo"
+                                className="w-5 h-5 object-contain self-end mb-1"
+                            />
+                            <Link
+                                to="/projects"
+                                className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            >
+                                Tech Europe's Berlin Hackathon
+                            </Link>
+                        </span>
+                    </li>
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ 4th @{" "}
+                        <span className="inline-flex items-baseline gap-1">
+                            <img
+                                src={QRTLogo}
+                                alt="QRT Logo"
+                                className="w-5 h-5 object-contain self-end mb-1"
+                            />
+                            <a
+                                href="https://challengedata.ens.fr/challenges/143"
+                                className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                QRT Data Challenge 2024
+                            </a>
+                        </span>
+                    </li>
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ built a fact-checking chatbot (RAG + French politics)
+                    </li>
+                </ul>
+            </motion.section>
+
+            {/* Work Experience Section */}
+            <motion.section
+                variants={fadeIn}
+                custom={4}
+                className="mb-5 border-l-2 border-ocean-500/30 pl-4 py-2"
+            >
+                <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-4 font-semibold">
+                    Work Experience
+                </h2>
+                <div className="space-y-6 text-xs sm:text-sm">
+                    {/* BearingPoint */}
+                    <div className="group">
+                        <div className="flex flex-wrap items-baseline gap-1 mb-2 hover:translate-x-1 transition-transform duration-200">
+                            <span className="text-gray-100">💼 AI engineer @</span>
+                            <img
+                                src={DemandsensLogo}
+                                alt="Demandsens Logo"
+                                className="w-5 h-5 object-contain self-end mb-1"
+                            />
+                            <a
+                                href="https://demandsens.ai/en/"
+                                className="text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                BearingPoint
+                            </a>
+                            <span className="text-gray-400 text-xs">(Mar - Aug 2025)</span>
+                        </div>
+                        <ul className="space-y-1 ml-4 text-gray-400">
+                            <li className="hover:translate-x-1 transition-transform duration-200">
+                                • built an LLM-powered SaaS to analyze book manuscripts
+                            </li>
+                            <li className="hover:translate-x-1 transition-transform duration-200">
+                                • designed a complex RAG architecture and an asynchronous job management
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* BNP Paribas */}
+                    <div className="group">
+                        <div className="flex flex-wrap items-baseline gap-1 mb-2 hover:translate-x-1 transition-transform duration-200">
+                            <span className="text-gray-100">💼 Data scientist @</span>
                             <img
                                 src={BNPLogo}
                                 alt="BNP Paribas Logo"
-                                className="w-6 h-6 object-contain self-end"
+                                className="w-5 h-5 object-contain self-end mb-1"
                             />
                             <a
                                 href="https://group.bnpparibas/"
-                                className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 font-medium"
+                                className="text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 BNP Paribas
-                            </a>{" "}
-                            <span className="text-gray-400 relative left-[10px]">(Sep 2024 – Feb 2025)</span>
-                        </span>
-                    </span>
-                </li>
-                <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • built ML models (XGBoost, KNN, Random Forest) on open data
-                </li>
-                <li className="ml-8 text-gray-400 hover:translate-x-1 transition-transform duration-200">
-                    • delivered dashboards for non-technical business stakeholders
-                </li>
-
-                <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span className="text-gray-300">
-                        <span className="inline-flex flex-wrap items-baseline gap-1">
-                            <a className="relative left-[-4px]">🥋 Training BJJ @</a>
-                            <img
-                                src={GracieBarraLogo}
-                                alt="Gracie Barra Logo"
-                                className="w-6 h-6 object-contain self-end"
-                            />
-                            <a
-                                href="https://graciebarra75.com/"
-                                className="relative left-[4px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 font-medium"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                Gracie Barra Paris
                             </a>
-                        </span>
-                        , surfed across NZ, rugby national finalist with my school team
-                    </span>
-                </li>
-            </ul>
+                            <span className="text-gray-400 text-xs">(Sep 2024 – Feb 2025)</span>
+                        </div>
+                        <ul className="space-y-1 ml-4 text-gray-400">
+                            <li className="hover:translate-x-1 transition-transform duration-200">
+                                • built ML models (XGBoost, KNN, Random Forest) on open data
+                            </li>
+                            <li className="hover:translate-x-1 transition-transform duration-200">
+                                • delivered dashboards for non-technical business stakeholders
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </motion.section>
 
-            <motion.div
-                className="flex flex-col sm:flex-row gap-4 mt-10"
+            {/* Personal Section */}
+            <motion.section
                 variants={fadeIn}
-                custom={20}
+                custom={6}
+                className="mb-5 border-l-2 border-ocean-500/30 pl-4 py-2"
+            >
+                <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-4 font-semibold">
+                    Beyond Work
+                </h2>
+                <p className="text-xs sm:text-sm text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                    🥋 Training BJJ @{" "}
+                    <span className="inline-flex items-baseline gap-1">
+                        <img
+                            src={GracieBarraLogo}
+                            alt="Gracie Barra Logo"
+                            className="w-5 h-5 object-contain self-end mb-1"
+                        />
+                        <a
+                            href="https://graciebarra75.com/"
+                            className="text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 relative"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            Gracie Barra Paris
+                        </a>
+                    </span>
+                    , surfed across NZ, rugby national finalist with my school team
+                </p>
+            </motion.section>
+
+            {/* CTA Buttons */}
+            <motion.div
+                className="flex flex-col sm:flex-row gap-4 mt-12"
+                variants={fadeIn}
+                custom={8}
             >
                 <Link
                     to="/projects"
-                    className="group relative overflow-hidden bg-ocean-500 text-white px-6 py-2 rounded-md inline-flex items-center gap-2 transition-all duration-300 hover:bg-ocean-600"
+                    className="group relative overflow-hidden bg-ocean-500 text-white px-6 py-3 rounded-md inline-flex items-center justify-center gap-2 transition-all duration-300 hover:bg-ocean-600 hover:shadow-lg hover:shadow-ocean-500/20"
                 >
-                    <span className="relative z-10">see what I’ve built</span>
+                    <span className="relative z-10 font-medium">see what I've built</span>
                     <ArrowRight
                         size={16}
-                        className="ml-1 group-hover:translate-x-1 group-hover:rotate-12 transition-transform duration-300 z-10"
+                        className="group-hover:translate-x-1 transition-transform duration-300 z-10"
                     />
-                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-ocean-400 to-ocean-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </Link>
 
                 <a
                     href="/resume_PUYBAREAU.pdf"
-                    className="relative inline-flex items-center gap-2 text-ocean-400 hover:text-ocean-200 transition-colors before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 before:rounded-full"
+                    className="relative inline-flex items-center justify-center gap-2 text-ocean-400 hover:text-ocean-300 transition-colors px-6 py-3 border border-ocean-500/30 rounded-md hover:border-ocean-400/50 hover:bg-ocean-500/5"
                 >
                     → view my resume
                 </a>
             </motion.div>
 
+            {/* Footer */}
             <motion.footer
-                className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
+                className="text-sm text-gray-500 mt-20 border-t border-gray-700/50 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center"
                 variants={fadeIn}
+                custom={10}
             >
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600 font-medium">
                     © 2025 Hugo Puybareau
                 </div>
 
-                <div className="mt-2 sm:mt-0 flex gap-4">
+                <div className="mt-4 sm:mt-0 flex gap-4">
                     {[
                         {
                             icon: <Github size={20} />,
@@ -304,7 +311,7 @@ const HomePage: React.FC = () => {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative text-gray-400 hover:text-ocean-400 transition duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            className="text-gray-400 hover:text-ocean-400 transition-all duration-300 hover:-translate-y-0.5"
                         >
                             {icon}
                         </a>
