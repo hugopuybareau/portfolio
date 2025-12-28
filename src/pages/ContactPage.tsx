@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Github, Linkedin, Code } from "lucide-react";
+import { Mail, MapPin, Phone, Github, Linkedin, Code} from "lucide-react";
 
 
 const fadeIn = {
