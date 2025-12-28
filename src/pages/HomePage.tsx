@@ -9,6 +9,7 @@ import DemandsensLogo from "/icons/demandsens.png";
 import GracieBarraLogo from "/icons/gracieBarra.png";
 import QRTLogo from "/icons/qrtLogo.png";
 import silveragentsLogo from "/icons/silveragents.png";
+import techEuropeLogo from "/icons/techeurope.png";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -51,15 +52,15 @@ const HomePage: React.FC = () => {
                 <li className="pl-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span className="text-gray-300">
                         🎓 CS & eng @{" "}
-                        <span className="inline-flex flex-wrap items-center gap-1">
+                        <span className="inline-flex flex-wrap items-baseline gap-1">
                             <img
                                 src={CentraleLyonLogo}
                                 alt="Centrale Lyon"
-                                className="w-4 h-4 object-contain relative sm:top-[5px]"
+                                className="w-6 h-6 object-contain self-end"
                             />
                             <a
                                 href="https://www.ec-lyon.fr/formation/ingenieur-generaliste"
-                                className="relative left-[4px] top-[3px] hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                className="relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -77,77 +78,111 @@ const HomePage: React.FC = () => {
                     {
                         label: (
                             <>
-                                <span className="inline-flex items-center gap-1 flex-wrap">
-                                    ↳ building agents @
+                                ↳ built an agent that cuts developer setup time @{" "}
+                                <span className="inline-flex items-baseline gap-1">
                                     <img
                                         src={silveragentsLogo}
                                         alt="Silver Agents Logo"
-                                        className="w-6 h-6 object-contain relative left-[2px]"
+                                        className="w-6 h-6 object-contain self-end"
                                     />
                                     <a
                                         href="https://www.linkedin.com/company/silveragents/"
-                                        className="relative left-[6px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
                                         silveragents.ai
-                                    </a>{" "}
+                                    </a>
                                 </span>
-
                             </>
                         ),
                     },
                     {
                         label: (
                             <>
-                                <span className="inline-flex items-center gap-1 flex-wrap">
-                                    ↳ 4th @
+                                ↳ built a funny agentic trading platform on Jade {" "}
+                                <span className="inline-flex items-baseline gap-1">
+                                    <a
+                                        href="https://www.linkedin.com/company/silveragents/"
+                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                    </a>
+                                </span>
+                            </>
+                        ),
+                    },
+                    {
+                        label: (
+                            <>
+                                ↳ took part in{" "}
+                                <span className="inline-flex items-baseline gap-1">
+                                    <img
+                                        src={techEuropeLogo}
+                                        alt="Tech Europe Logo"
+                                        className="w-6 h-6 object-contain self-end"
+                                    />
+                                    <a
+                                        href="https://www.linkedin.com/company/silveragents/"
+                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                        {" "}Tech Europe's Berlin Hackathon
+                                    </a>
+                                </span>
+                            </>
+                        ),
+                    },
+                    {
+                        label: (
+                            <>
+                                ↳ 4th @{" "}
+                                <span className="inline-flex items-baseline gap-1">
                                     <img
                                         src={QRTLogo}
                                         alt="QRT Logo"
-                                        className="w-6 h-6 object-contain relative left-[2px]"
+                                        className="w-6 h-6 object-contain self-end"
                                     />
                                     <a
                                         href="https://challengedata.ens.fr/challenges/143"
-                                        className="relative left-[6px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                        className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
                                         QRT Data Challenge 2024
-                                    </a>{" "}
+                                    </a>
                                 </span>
-
                             </>
                         ),
                     },
-                    { label: "↳ built a baby semantic search engine w/ FastAPI & FAISS" },
-                    { label: "↳ explored embedding models & visualization" },
                     { label: "↳ built a fact-checking chatbot (RAG + French politics)" },
                 ].map(({ label }, i) => (
                     <li
                         key={i}
-                        className="group inline-flex flew-wrap items-start gap-4 pl-8 relative hover:translate-x-1 transition-transform duration-200"
+                        className="group flex items-start gap-4 pl-4 relative hover:translate-x-1 transition-transform duration-200"
                     >
                         <span className="text-gray-300">{label}</span>
                     </li>
                 ))}
 
                 <li className="group pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
-                    <span className="inline-flex items-center gap-1 flex-wrap text-gray-300">
+                    <span className="inline-flex items-baseline gap-1 flex-wrap text-gray-300">
                         💼 AI engineer @
                         <img
                             src={DemandsensLogo}
                             alt="Demandsens Logo"
-                            className="w-6 h-6 object-contain relative left-[5px]"
+                            className="w-6 h-6 object-contain self-end"
                         />
                         <a
                             href="https://demandsens.ai/en/"
-                            className="text-gray-300 relative left-[10px] hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            className="text-gray-300 relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             BearingPoint
-                        </a>{" "}
+                        </a>
                         <span className="text-gray-400 relative left-[10px]">(Mar - Aug 2025)</span>
                     </span>
                 </li>
@@ -160,16 +195,16 @@ const HomePage: React.FC = () => {
 
                 <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span>
-                        <span className="inline-flex flex-wrap items-center gap-1">
+                        <span className="inline-flex flex-wrap items-baseline gap-1">
                             💼 Data scientist @{" "}
                             <img
                                 src={BNPLogo}
                                 alt="BNP Paribas Logo"
-                                className="w-6 h-6 object-contain relative left-[5px]"
+                                className="w-6 h-6 object-contain self-end"
                             />
                             <a
                                 href="https://group.bnpparibas/"
-                                className="relative left-[10px] text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                className="relative text-gray-300 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300 font-medium"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -188,12 +223,12 @@ const HomePage: React.FC = () => {
 
                 <li className="group flex items-start gap-4 pl-4 pt-4 relative hover:translate-x-1 transition-transform duration-200">
                     <span className="text-gray-300">
-                        <span className="inline-flex flex-wrap items-center gap-1">
+                        <span className="inline-flex flex-wrap items-baseline gap-1">
                             <a className="relative left-[-4px]">🥋 Training BJJ @</a>
                             <img
                                 src={GracieBarraLogo}
                                 alt="Gracie Barra Logo"
-                                className="w-6 h-6 object-contain align-middle"
+                                className="w-6 h-6 object-contain self-end"
                             />
                             <a
                                 href="https://graciebarra75.com/"
