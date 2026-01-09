@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="min-h-screen px-4 pt-24 sm:pt-30 max-w-2xl mx-auto text-gray-100 font-mono"
+            className="min-h-screen px-4 pt-24 pb-10 sm:pt-30 max-w-2xl mx-auto text-gray-100 font-mono"
         >
             {/* Intro Section */}
             <motion.div variants={fadeIn} custom={0} className="mb-6">
@@ -275,15 +275,15 @@ const HomePage: React.FC = () => {
 
             {/* Footer */}
             <motion.footer
-                className="text-sm text-gray-500 mt-20 border-t border-gray-700/50 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center"
+                className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
                 variants={fadeIn}
                 custom={10}
             >
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600 font-medium">
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
                     © 2025 Hugo Puybareau
                 </div>
 
-                <div className="mt-4 sm:mt-0 flex gap-4">
+                <div className="mt-2 sm:mt-0 flex gap-4">
                     {[
                         {
                             icon: <Github size={20} />,
@@ -311,7 +311,7 @@ const HomePage: React.FC = () => {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-ocean-400 transition-all duration-300 hover:-translate-y-0.5"
+                            className="relative text-gray-400 hover:text-ocean-400 transition duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
                         >
                             {icon}
                         </a>
