@@ -113,7 +113,7 @@ const ContactPage: React.FC = () => {
                         },
                         {
                             icon: <Mail size={20} />,
-                            href: "mailto:hugo.puybareau@etu.ec-lyon.fr",
+                            href: "mailto:hugo [dot] puybareau [at] gmail [dot] com",
                         },
                         {
                             icon: <Code size={20} />,
