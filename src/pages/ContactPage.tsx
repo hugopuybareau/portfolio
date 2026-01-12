@@ -62,7 +62,7 @@ const ContactPage: React.FC = () => {
                             href="mailto:hugo.puybareau@etu.ec-lyon.fr"
                             className="text-gray-300 hover:text-ocean-400 transition-colors"
                         >
-                            hugo.puybareau@etu.ec-lyon.fr
+                            hugo [dot] puybareau [at] etu [dot] ec-lyon [dot] fr
                         </a>
                     </li>
                     <li className="flex items-start gap-3">
