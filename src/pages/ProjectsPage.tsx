@@ -70,7 +70,7 @@ const projects = [
         github: null,
         xPost: null,
         linkedinPost: "https://www.linkedin.com/posts/hugopuybareau_this-weekend-maxence-rossignol-and-i-had-activity-7384468281514049536-1Qk2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2cL-wB1XsPIhgnTqqOqL_lL3NdXksXaqc",
-        hackerNewsPost: "https://news.ycombinator.com/item?id=45890841",
+        hackerNewsPost: "https://news.ycombinator.com/item?id=45594964",
     },
     {
         title: 'LLM-powered SaaS for Manuscript Analysis',
