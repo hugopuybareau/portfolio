@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
     >
       <h1 className="text-3xl font-bold mb-6">About Me</h1>
 
-      <ul className="space-y-6 text-base leading-relaxed">
+      <ul className="space-y-6 text-sm sm:text-base leading-relaxed">
         <li>
           I'm an AI engineer and product-focused developer working as an AI startup founder with Maxence Rossignol. I studied engineering at
           Centrale de Lyon and developed hands-on expertise in NLP, GenAI, and

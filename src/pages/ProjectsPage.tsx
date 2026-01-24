@@ -227,11 +227,11 @@ const ProjectsPage: React.FC = () => {
                                     </span>
                                 </div>
 
-                                <p className="text-gray-300 text-sm">
+                                <p className="text-gray-300 text-xs sm:text-sm">
                                     {project.description}
                                 </p>
 
-                                <ul className="text-gray-400 text-sm list-disc pl-4 space-y-1">
+                                <ul className="text-gray-400 text-xs sm:text-sm list-disc pl-4 space-y-1">
                                     {project.bullets.map((point) => (
                                         <li key={point}>{point}</li>
                                     ))}

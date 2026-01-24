@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
         >
             <div className="flex flex-col flex-grow">
                 <h1 className="text-3xl font-bold mb-6">Get in Touch</h1>
-                <p className="text-base text-gray-400 mb-10">
+                <p className="text-sm sm:text-base text-gray-400 mb-10">
                     I'm always open to discussing new projects & creative ideas!
                 </p>
 
@@ -49,7 +49,7 @@ const ContactPage: React.FC = () => {
                     />
                 </div>
 
-                <ul className="space-y-6 text-base leading-relaxed">
+                <ul className="space-y-6 text-sm sm:text-base leading-relaxed">
                     <li className="flex items-start gap-3">
                         <MapPin size={18} className="text-ocean-400 mt-1" />
                         <span className="text-gray-300">

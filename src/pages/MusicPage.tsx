@@ -74,12 +74,12 @@ const PlaylistCard = ({ playlist, index }: { playlist: Playlist; index: number }
 
       {/* Info Section */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-gray-100 mb-2 group-hover:text-ocean-400 transition-colors duration-300">
+        <div className="text-lg font-semibold text-gray-100 mb-2 group-hover:text-ocean-400 transition-colors duration-300">
           {playlist.name}
-        </h3>
-        <p className="text-sm text-gray-400 leading-relaxed">
+        </div>
+        <div className="text-xs sm:text-sm text-gray-400 leading-relaxed">
           {playlist.description}
-        </p>
+        </div>
       </div>
 
       {/* Hover Glow Effect */}
@@ -97,7 +97,7 @@ const MusicPage: React.FC = () => {
       className="min-h-screen px-4 pt-24 pb-10 max-w-4xl mx-auto text-gray-100 font-mono"
     >
       <h1 className="text-3xl font-bold mb-3">Music</h1>
-      <p className="text-gray-400 mb-10 max-w-xl">
+      <p className="text-sm sm:text-base text-gray-400 mb-10 max-w-xl">
         A few playlists I've built over time. Feel free to suggest new music!
       </p>
 
