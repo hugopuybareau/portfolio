@@ -98,7 +98,7 @@ const MusicPage: React.FC = () => {
     >
       <h1 className="text-3xl font-bold mb-3">Music</h1>
       <p className="text-gray-400 mb-10 max-w-xl">
-        A few playlists I've curated over time. Music that moves me, inspires me, or just feels right.
+        A few playlists I've built over time. Feel free to suggest new music!
       </p>
 
       {/* Playlist Grid */}
