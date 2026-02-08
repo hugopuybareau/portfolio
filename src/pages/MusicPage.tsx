@@ -49,6 +49,11 @@ const playlists: Playlist[] = [
     name: "make bpm",
     description: "car music! its like electronic music (won't go into genres lol)",
   },
+  {
+    id: "3e1E2uMhX2pLHjPYXjBPJq",
+    name: "make immortal",
+    description: "this is mostly indie rock and pop. I was listening to this for hours when playing val",
+  }
 ];
 
 const PlaylistCard = ({ playlist, index }: { playlist: Playlist; index: number }) => {
