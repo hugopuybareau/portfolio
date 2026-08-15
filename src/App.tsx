@@ -6,6 +6,8 @@ import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import MusicPage from './pages/MusicPage';
+import ThoughtListPage from './pages/ThoughtListPage';
+import ThoughtDetailPage from './pages/ThoughtDetailPage';
 
 function App() {
   const location = useLocation();
@@ -24,6 +26,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/thoughts" element={<ThoughtListPage />} />
+          <Route path="/thoughts/:slug" element={<ThoughtDetailPage />} />
         </Routes>
       </main>
     </div>
