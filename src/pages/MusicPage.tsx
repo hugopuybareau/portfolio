@@ -53,7 +53,17 @@ const playlists: Playlist[] = [
     id: "3e1E2uMhX2pLHjPYXjBPJq",
     name: "make immortal",
     description: "this is mostly indie rock and pop. I was listening to this for hours when playing val",
-  }
+  },
+  {
+    id: "56pefgU9KCaZQYjogw8xvh",
+    name: "make insta",
+    description: "cool jazz sounds to renew with my drummer self, cool for cooking",
+  },
+  {
+    id: "1svhaYlmKATSEVwfrwMNW7",
+    name: "make alone",
+    description: "works great when you don't like your life this one",
+  },
 ];
 
 const PlaylistCard = ({ playlist, index }: { playlist: Playlist; index: number }) => {
