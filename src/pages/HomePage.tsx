@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Code, ArrowRight } from "lucide-react";
 
 import CentraleLyonLogo from "/icons/centraleLyonLogo.png";
 import BNPLogo from "/icons/bnpParibas.png";
@@ -264,13 +264,6 @@ const HomePage: React.FC = () => {
                         className="group-hover:translate-x-1 transition-transform duration-300 z-10"
                     />
                 </Link>
-
-                <a
-                    href="/resume_PUYBAREAU.pdf"
-                    className="relative inline-flex items-center justify-center gap-2 text-ocean-400 hover:text-ocean-300 transition-colors px-6 py-3 border border-ocean-500/30 rounded-md hover:border-ocean-400/50 hover:bg-ocean-500/5"
-                >
-                    → view my resume
-                </a>
             </motion.div>
 
             {/* Footer */}
@@ -296,10 +289,6 @@ const HomePage: React.FC = () => {
                         {
                             icon: <XIcon size={20} />,
                             href: "https://x.com/hugopuybareau",
-                        },
-                        {
-                            icon: <Mail size={20} />,
-                            href: "mailto:hugo.puybareau@etu.ec-lyon.fr",
                         },
                         {
                             icon: <Code size={20} />,

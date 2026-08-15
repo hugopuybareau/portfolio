@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Code, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Code, ArrowRight } from 'lucide-react';
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -329,19 +329,15 @@ const ProjectsPage: React.FC = () => {
                     {[
                         {
                             icon: <Github size={20} />,
-                            href: 'https://github.com/hugopuybareau',
+                            href: "https://github.com/hugopuybareau",
                         },
                         {
                             icon: <Linkedin size={20} />,
-                            href: 'https://www.linkedin.com/in/hugopuybareau/',
+                            href: "https://www.linkedin.com/in/hugopuybareau/",
                         },
                         {
                             icon: <XIcon size={20} />,
-                            href: 'https://x.com/hugopuybareau',
-                        },
-                        {
-                            icon: <Mail size={20} />,
-                            href: 'mailto:hugo.puybareau@etu.ec-lyon.fr',
+                            href: "https://x.com/hugopuybareau",
                         },
                         {
                             icon: <Code size={20} />,

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code } from "lucide-react";
+import { Github, Linkedin, Code } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -109,10 +109,6 @@ const AboutPage: React.FC = () => {
             {
               icon: <XIcon size={20} />,
               href: "https://x.com/hugopuybareau",
-            },
-            {
-              icon: <Mail size={20} />,
-              href: "mailto:hugo.puybareau@etu.ec-lyon.fr",
             },
             {
               icon: <Code size={20} />,

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, Phone, Code, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Code } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -37,109 +37,29 @@ const ContactPage: React.FC = () => {
       <div className="mb-12">
         <h1 className="text-3xl font-bold mb-4">Contact</h1>
         <p className="text-sm sm:text-base text-gray-400 max-w-xl leading-relaxed">
-          Always open to discussing new projects, collaborations, or just interesting
-          conversations. Whether it's AI, engineering, or something completely different —
-          reach out.
+          Open to new projects and interesting conversations. Find me on the links below.
         </p>
       </div>
 
-      {/* Direct contact */}
-      <section className="mb-16">
-        <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-5 font-semibold">
-          Direct
-        </h2>
-        <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 justify-center mb-12">
+        {[
+          { icon: <Github size={18} />, href: "https://github.com/hugopuybareau", label: "GitHub" },
+          { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/hugopuybareau/", label: "LinkedIn" },
+          { icon: <XIcon size={18} />, href: "https://x.com/hugopuybareau", label: "X" },
+          { icon: <Code size={18} />, href: "https://github.com/hugopuybareau/portfolio", label: "This repo" },
+        ].map(({ icon, href, label }, idx) => (
           <a
-            href="mailto:hugo.puybareau@etu.ec-lyon.fr"
-            className="group flex items-start gap-4 hover:translate-x-1 transition-transform duration-200"
+            key={idx}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-700/50 text-gray-400 hover:text-ocean-400 hover:border-ocean-500/30 transition-all duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
           >
-            <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-ocean-500/10 flex items-center justify-center group-hover:bg-ocean-500/20 transition-colors">
-              <Mail size={18} className="text-ocean-400" />
-            </div>
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Email</p>
-              <p className="text-gray-100 hover:text-ocean-400 transition-colors">
-                hugo.puybareau@etu.ec-lyon.fr
-              </p>
-            </div>
+            {icon}
+            <span className="text-sm">{label}</span>
           </a>
-
-          <div className="flex items-start gap-4 hover:translate-x-1 transition-transform duration-200 cursor-default">
-            <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-ocean-500/10 flex items-center justify-center">
-              <MapPin size={18} className="text-ocean-400" />
-            </div>
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Location</p>
-              <p className="text-gray-100">
-                Paris / Bordeaux, France — open to remote or hybrid
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="tel:+33619753704"
-            className="group flex items-start gap-4 hover:translate-x-1 transition-transform duration-200"
-          >
-            <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-ocean-500/10 flex items-center justify-center group-hover:bg-ocean-500/20 transition-colors">
-              <Phone size={18} className="text-ocean-400" />
-            </div>
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Phone</p>
-              <p className="text-gray-100 hover:text-ocean-400 transition-colors">
-                +33 6 19 75 37 04
-              </p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      {/* Resume */}
-      <section className="mb-16">
-        <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-5 font-semibold">
-          Resume
-        </h2>
-        <a
-          href="/resume_PUYBAREAU.pdf"
-          className="group inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-ocean-500/20 text-ocean-400 hover:text-ocean-300 hover:border-ocean-400/40 hover:bg-ocean-500/5 transition-all duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-        >
-          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          Download CV (PDF)
-        </a>
-      </section>
-
-      {/* Social */}
-      <section className="mb-16">
-        <h2 className="text-xs uppercase tracking-wider text-ocean-400 mb-5 font-semibold">
-          Elsewhere
-        </h2>
-        <div className="flex flex-wrap gap-3">
-          {[
-            { icon: <Github size={18} />, href: "https://github.com/hugopuybareau", label: "GitHub" },
-            { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/hugopuybareau/", label: "LinkedIn" },
-            { icon: <XIcon size={18} />, href: "https://x.com/hugopuybareau", label: "X" },
-            { icon: <Mail size={18} />, href: "mailto:hugo.puybareau@etu.ec-lyon.fr", label: "Email" },
-            { icon: <Code size={18} />, href: "https://github.com/hugopuybareau/portfolio", label: "This repo" },
-          ].map(({ icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-700/50 text-gray-400 hover:text-ocean-400 hover:border-ocean-500/30 transition-all duration-300 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
-            >
-              {icon}
-              <span className="text-sm">{label}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Availability */}
-      <section className="mb-16 border-l-2 border-ocean-500/30 pl-4 py-1">
-        <p className="text-sm text-gray-300 leading-relaxed">
-          Currently available for new opportunities — feel free to reach out.
-        </p>
-      </section>
+        ))}
+      </div>
 
       <motion.footer
         className="text-sm text-gray-500 mt-20 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between"
@@ -154,7 +74,6 @@ const ContactPage: React.FC = () => {
             { icon: <Github size={20} />, href: "https://github.com/hugopuybareau" },
             { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/hugopuybareau/" },
             { icon: <XIcon size={20} />, href: "https://x.com/hugopuybareau" },
-            { icon: <Mail size={20} />, href: "mailto:hugo.puybareau@etu.ec-lyon.fr" },
             { icon: <Code size={20} />, href: "https://github.com/hugopuybareau/portfolio" },
           ].map(({ icon, href }, idx) => (
             <a

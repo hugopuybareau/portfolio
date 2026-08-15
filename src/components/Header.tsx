@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, Mail, FileText, ChevronDown } from 'lucide-react';
+import { Menu, X, Github, Linkedin, ChevronDown } from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,11 +50,7 @@ const Header: React.FC = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                scrolled
-                    ? 'backdrop-blur bg-dark-950/60 border-b border-gray-800 py-3'
-                    : 'bg-transparent py-5'
-            }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur bg-dark-950/60 border-b border-gray-800 py-3' : 'bg-transparent py-5'}`}
         >
             <div className="max-w-2xl mx-auto px-4 flex justify-between items-center">
                 <Link to="/" className="text-xl md:text-2xl font-bold tracking-tight">
@@ -69,11 +65,7 @@ const Header: React.FC = () => {
                         <Link
                             key={item.to}
                             to={item.to}
-                            className={`relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${
-                                location.pathname === item.to
-                                    ? 'text-ocean-400 before:w-full'
-                                    : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'
-                            }`}
+                            className={`relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${location.pathname === item.to ? 'text-ocean-400 before:w-full' : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'}`}
                         >
                             {item.label}
                         </Link>
@@ -83,11 +75,7 @@ const Header: React.FC = () => {
                         <Link
                             key={item.to}
                             to={item.to}
-                            className={`relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${
-                                location.pathname === item.to
-                                    ? 'text-ocean-400 before:w-full'
-                                    : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'
-                            }`}
+                            className={`relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${location.pathname === item.to ? 'text-ocean-400 before:w-full' : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'}`}
                         >
                             {item.label}
                         </Link>
@@ -97,11 +85,7 @@ const Header: React.FC = () => {
                     <div className="relative" ref={personalDropdownRef}>
                         <button
                             onClick={() => setIsPersonalOpen(!isPersonalOpen)}
-                            className={`flex items-center gap-1 relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${
-                                personalLinks.some(link => location.pathname === link.to)
-                                    ? 'text-ocean-400 before:w-full'
-                                    : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'
-                            }`}
+                            className={`flex items-center gap-1 relative transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-gradient-to-r from-ocean-400 to-ocean-600 before:transition-all before:duration-300 ${personalLinks.some(link => location.pathname === link.to) ? 'text-ocean-400 before:w-full' : 'text-gray-300 hover:text-ocean-400 before:w-0 hover:before:w-full'}`}
                         >
                             personal
                             <ChevronDown
@@ -117,11 +101,7 @@ const Header: React.FC = () => {
                                         key={item.to}
                                         to={item.to}
                                         onClick={() => setIsPersonalOpen(false)}
-                                        className={`block px-4 py-2 transition-colors ${
-                                            location.pathname === item.to
-                                                ? 'text-ocean-400 bg-dark-800'
-                                                : 'text-gray-300 hover:text-ocean-400 hover:bg-dark-800'
-                                        }`}
+                                        className={`block px-4 py-2 transition-colors ${location.pathname === item.to ? 'text-ocean-400 bg-dark-800' : 'text-gray-300 hover:text-ocean-400 hover:bg-dark-800'}`}
                                     >
                                         {item.label}
                                     </Link>
@@ -150,11 +130,7 @@ const Header: React.FC = () => {
                                 key={item.to}
                                 to={item.to}
                                 onClick={() => setIsMenuOpen(false)}
-                                className={`transition-colors ${
-                                    location.pathname === item.to
-                                        ? 'text-ocean-400'
-                                        : 'text-gray-300 hover:text-ocean-400'
-                                }`}
+                                className={`transition-colors ${location.pathname === item.to ? 'text-ocean-400' : 'text-gray-300 hover:text-ocean-400'}`}
                             >
                                 {item.label}
                             </Link>
@@ -165,11 +141,7 @@ const Header: React.FC = () => {
                                 key={item.to}
                                 to={item.to}
                                 onClick={() => setIsMenuOpen(false)}
-                                className={`transition-colors ${
-                                    location.pathname === item.to
-                                        ? 'text-ocean-400'
-                                        : 'text-gray-300 hover:text-ocean-400'
-                                }`}
+                                className={`transition-colors ${location.pathname === item.to ? 'text-ocean-400' : 'text-gray-300 hover:text-ocean-400'}`}
                             >
                                 {item.label}
                             </Link>
@@ -179,11 +151,7 @@ const Header: React.FC = () => {
                         <div ref={mobilePersonalRef}>
                             <button
                                 onClick={() => setIsPersonalOpen(!isPersonalOpen)}
-                                className={`flex items-center gap-1 transition-colors ${
-                                    personalLinks.some(link => location.pathname === link.to)
-                                        ? 'text-ocean-400'
-                                        : 'text-gray-300 hover:text-ocean-400'
-                                }`}
+                                className={`flex items-center gap-1 transition-colors ${personalLinks.some(link => location.pathname === link.to) ? 'text-ocean-400' : 'text-gray-300 hover:text-ocean-400'}`}
                             >
                                 personal
                                 <ChevronDown
@@ -201,11 +169,7 @@ const Header: React.FC = () => {
                                                 setIsMenuOpen(false);
                                                 setIsPersonalOpen(false);
                                             }}
-                                            className={`transition-colors ${
-                                                location.pathname === item.to
-                                                    ? 'text-ocean-400'
-                                                    : 'text-gray-400 hover:text-ocean-400'
-                                            }`}
+                                            className={`transition-colors ${location.pathname === item.to ? 'text-ocean-400' : 'text-gray-400 hover:text-ocean-400'}`}
                                         >
                                             {item.label}
                                         </Link>
@@ -232,22 +196,6 @@ const Header: React.FC = () => {
                                 aria-label="LinkedIn"
                             >
                                 <Linkedin size={20} />
-                            </a>
-                            <a
-                                href="mailto:hugo.puybareau@etu.ec-lyon.fr"
-                                className="hover:text-white transition-colors"
-                                aria-label="Email"
-                            >
-                                <Mail size={20} />
-                            </a>
-                            <a
-                                href="/resume_PUYBAREAU.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-white transition-colors"
-                                aria-label="Resume"
-                            >
-                                <FileText size={20} />
                             </a>
                         </div>
                     </div>
