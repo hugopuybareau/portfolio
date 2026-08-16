@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
             {/* Intro Section */}
             <motion.div variants={fadeIn} custom={0} className="mb-6">
                 <p className="text-sm sm:text-base text-gray-100 mb-3 leading-relaxed">
-                    🏄 AI/ML engineer, student, and builder of intelligent products.
+                    🏄 AI/ML engineer, founder, working with Maxence Rossignol.
                 </p>
                 <p className="text-xs sm:text-sm text-gray-300">
                     🎓 CS & eng @{" "}
@@ -228,7 +228,7 @@ const HomePage: React.FC = () => {
                     Beyond Work
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-300 hover:translate-x-1 transition-transform duration-200">
-                    🥋 Training BJJ @{" "}
+                    running a lot, 🥋 Trained BJJ @{" "}
                     <span className="inline-flex items-baseline gap-1">
                         <img
                             src={GracieBarraLogo}
