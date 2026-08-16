@@ -59,7 +59,7 @@ const ThoughtPage: React.FC = () => {
         variants={fadeIn}
       >
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-ocean-400 to-ocean-600">
-          © 2025 Hugo Puybareau
+          © 2026 Hugo Puybareau
         </div>
         <div className="mt-2 sm:mt-0 flex gap-4">
           {[
