@@ -1,6 +1,6 @@
 # Hugo's Portfolio 🚀
 
-Welcome to my personal portfolio. I'm Hugo, a full-stack developer and AI engineer with a strong focus on generative AI, agentic systems, and applied machine learning. This is the readme for my portfolio, inspired by [Waterloo CS Webring](https://cs.uwatering.com/), deployed on Vercel.
+Welcome to my personal portfolio. I'm Hugo, ceo @ [jayn](https://jayn.app), where we work on reducing AI costs. This is the readme for my portfolio, inspired by [Waterloo CS Webring](https://cs.uwatering.com/), deployed on Vercel.
 
 ---
 
@@ -13,6 +13,7 @@ Welcome to my personal portfolio. I'm Hugo, a full-stack developer and AI engine
 
 ## 📂 Featured Projects
 
+- **[jaynshare](https://github.com/jaynlabs/jaynshare)** – self-hosted proxy to share Claude & Codex subscriptions (Rust)
 - **LLM-powered SaaS** for book manuscript analysis
 - **QRT Data Challenge 2024**
 - **Embedding analysis search**

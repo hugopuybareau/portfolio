@@ -41,6 +41,24 @@ const HackerNewsIcon = ({ size = 20 }: { size?: number }) => (
 
 const projects = [
     {
+        title: 'jaynshare — share your Claude & Codex subscriptions',
+        date: 'October 2026',
+        video: '/photos/projects/jaynshare_demo.mp4',
+        description:
+            'Maxence and I kept getting rate-limited on Claude Code while the other still had quota left, so we built jaynshare — a self-hosted proxy that lets a team pool its Claude and Codex subscriptions. Swap claude for jaynshare claude and each prompt is routed to an account with quota remaining.',
+        bullets: [
+            'one Rust binary for the server and the client',
+            'OAuth subscription + API-key accounts, with an account picker at launch',
+            'status line names the account serving your prompt',
+            'private listeners only, TLS pinned, audit log without bodies or credentials',
+            'signed releases and a one-command systemd install',
+        ],
+        github: 'https://github.com/jaynlabs/jaynshare',
+        xPost: null,
+        linkedinPost: null,
+        hackerNewsPost: null,
+    },
+    {
         title: 'Agentic Trading Platform on Jade',
         date: 'November 2025',
         video: 'https://github.com/user-attachments/assets/552750d6-e83a-4985-b2d4-5b4412cbb4aa',

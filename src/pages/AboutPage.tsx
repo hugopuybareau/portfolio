@@ -38,9 +38,18 @@ const AboutPage: React.FC = () => {
 
       <ul className="space-y-6 text-sm sm:text-base leading-relaxed">
         <li>
-          I'm an AI engineer and product-focused developer working as an AI startup founder with Maxence Rossignol. I studied engineering at
-          Centrale de Lyon and developed hands-on expertise in NLP, GenAI, and
-          full-stack product development.
+          I'm the ceo of{" "}
+          <a
+            href="https://jayn.app"
+            className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            jayn
+          </a>
+          , the company I run with Maxence Rossignol. We work on reducing AI
+          costs. I studied engineering at Centrale de Lyon and developed
+          hands-on expertise in NLP, GenAI, and full-stack product development.
         </li>
         <li>
           🏄 Outside of tech, I train Brazilian Jiu-Jitsu,

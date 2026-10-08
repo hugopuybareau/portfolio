@@ -10,6 +10,7 @@ import GracieBarraLogo from "/icons/gracieBarra.png";
 import QRTLogo from "/icons/qrtLogo.png";
 import silveragentsLogo from "/icons/silveragents.png";
 import techEuropeLogo from "/icons/techeurope.png";
+import jaynLogo from "/icons/jayn.svg";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -47,7 +48,23 @@ const HomePage: React.FC = () => {
             {/* Intro Section */}
             <motion.div variants={fadeIn} custom={0} className="mb-6">
                 <p className="text-sm sm:text-base text-gray-100 mb-3 leading-relaxed">
-                    🏄 AI/ML engineer, founder, working with Maxence Rossignol.
+                    🏄 ceo @{" "}
+                    <span className="inline-flex flex-wrap items-baseline gap-1">
+                        <img
+                            src={jaynLogo}
+                            alt="Jayn"
+                            className="w-5 h-5 object-contain self-end mb-1"
+                        />
+                        <a
+                            href="https://jayn.app"
+                            className="relative hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            jayn
+                        </a>
+                    </span>
+                    , where we work on reducing AI costs.
                 </p>
                 <p className="text-xs sm:text-sm text-gray-300">
                     🎓 CS & eng @{" "}
@@ -79,6 +96,25 @@ const HomePage: React.FC = () => {
                     Recently
                 </h2>
                 <ul className="space-y-3 text-xs sm:text-sm">
+                    <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
+                        ↳ released{" "}
+                        <span className="inline-flex items-baseline gap-1">
+                            <img
+                                src={jaynLogo}
+                                alt="Jayn Logo"
+                                className="w-5 h-5 object-contain self-end"
+                            />
+                            <a
+                                href="https://github.com/jaynlabs/jaynshare"
+                                className="relative text-gray-100 hover:text-ocean-400 transition duration-200 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r from-ocean-400 to-ocean-600 hover:before:w-full before:transition-all before:duration-300"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                jaynshare
+                            </a>
+                        </span>
+                        , a self-hosted proxy to share Claude & Codex subscriptions
+                    </li>
                     <li className="text-gray-300 hover:translate-x-1 transition-transform duration-200">
                         ↳ built an agent that cuts developer setup time @{" "}
                         <span className="inline-flex items-baseline self-end gap-1">
