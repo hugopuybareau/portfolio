@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Hugo Puybareau – Portfolio</title>
+    <script>
+        // Opt out of browser scroll restoration before it runs: without this,
+        // a reload re-applies the previous scroll offset (plus a few px) after
+        // React's scrollTo(0, 0), so the landing loads "a bit scrolled down".
+        try {
+            if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        } catch (e) { /* ignore */ }
+    </script>
     <meta name="description"
         content="Portfolio of Hugo Puybareau – Software engineer, creative developer, and builder of unique web experiences." />
     <meta name="author" content="Hugo Puybareau" />
